@@ -1,4 +1,4 @@
-
+# Basic Git
 
 ## Authentication
 
@@ -17,27 +17,14 @@ Most repositories are disabling username and password as an auth mechanism for s
 
 2. Add the key to the git server:
 
-[Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops)
-
-[Bitbucket](https://confluence.atlassian.com/bitbucketserver/ssh-user-keys-for-personal-use-776639793.html) `NOTE` You can skip xclip and just cat ~/.ssh/id_rsa.pub
-
 [Gitlab](https://docs.gitlab.com/ee/ssh/)
-
-[Github](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
 ### Personal Access Tokens
 
-[Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
-
-[Bitbucket](https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html)
-
 [Gitlab](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
-
-[Github](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
 ---
 
-[Next Clone, Commit, Merge](02-clone-commit-push-merge.md)
 # Clone Commit Push Pull
 
 ## Forking
@@ -46,25 +33,13 @@ Most public repositories don't let everyone push to them so you will need to for
 
 Here are links to the most common git systems and how to clone from them:
 
-[Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/forks?view=azure-devops&tabs=visual-studio)
-
-[Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/fork-a-repository/)
-
 [Gitlab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html)
-
-[Github](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
 
 ## Importing from other Repositories
 
 Sometimes you will want to fork from Github to your own repository so you can have a local copy to work from this is called importing. ***NOTE: If you are attending a lab provided by Red Hat please follow the Gitlab instructions to import from URL.***
 
 Here are links on how to import for the most common repositories:
-
-[ADO](https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?view=azure-devops)
-
-[Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/import-a-repository-from-github-or-gitlab/)
-
-[Github](https://docs.github.com/en/github/importing-your-projects-to-github)
 
 [Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html)
 
@@ -211,17 +186,9 @@ To github.com:yourusername/HowWeEnable.git
 
 If you are the owner and want to merge a feature branch into `main` you can do so via `git merge <branchname>` from the main branch, however this is not a best practice. Best practice is to perform a pull request (sometimes called merge request) from the central server and have someone review the changes before they are merged into main. Below are links to each major repository servers instructions to perform a pull request:
 
-[Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops)
-
-[Bitbucket](https://www.atlassian.com/git/tutorials/making-a-pull-request)
-
-[Github](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
-
 [Gitlab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
 
 Please create a pull request following above documentation to your repository you created above from the `test` branch into the `main` branch of your fork.
-
-`Note:` in the next section we will walk through how to do this vi Github.
 
 ---
 

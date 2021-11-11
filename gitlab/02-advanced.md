@@ -36,7 +36,7 @@ Rebasing is the process of moving or combining a sequence of commits to a new ba
 
 ![image](images/rebase.svg)
 
-_Note:_ You should not rebase in public repositories as it will look like some of the history disappear.
+_Note:_ You should not rebase in public repositories as it will look like some of the history disappeared.
 
 The most common use of rebase is if you have gotten behind the upstream main branch in a remote feature branch. Before trying to commit for a PR make sure to `git rebase main --interactive`
 
@@ -63,7 +63,7 @@ The most common use of rebase is if you have gotten behind the upstream main bra
    | * d12416f added more content and created file structure for more workshops
    | * d47de7b added practice scenarios section as WIP
    |/  
-   *   ec09034 Merge pull request #3 from chadhellyea/fleshout
+   *   ec09034 Merge pull request #3 from chadmf/fleshout
    |\  
    | * 756e040 fixed linting issues
    | * 96ae557 built out skeleton for enablement workshop

@@ -30,8 +30,8 @@ _Note:_ `Main` could be called `master` if it is an older repository.
 
     ```shell
     git add merge.txt
-    git commit -am "inital commit"
-    [main (root-commit) e3e9921] inital commit
+    git commit -am "initial commit"
+    [main (root-commit) e3e9921] initial commit
     1 file changed, 1 insertion(+)
     create mode 100644 merge.txt
     ```
