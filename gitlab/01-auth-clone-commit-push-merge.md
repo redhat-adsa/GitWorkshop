@@ -25,8 +25,6 @@ Most repositories are disabling username and password as an auth mechanism for s
 
 ---
 
-# Clone Commit Push Pull
-
 ## Forking
 
 Most public repositories don't let everyone push to them so you will need to fork the repository to your own namespace in your git server before you can clone it.
