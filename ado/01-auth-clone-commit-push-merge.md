@@ -19,26 +19,11 @@ Most repositories are disabling username and password as an auth mechanism for s
 
 [Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops)
 
-[Bitbucket](https://confluence.atlassian.com/bitbucketserver/ssh-user-keys-for-personal-use-776639793.html) `NOTE` You can skip xclip and just cat ~/.ssh/id_rsa.pub
-
-[Gitlab](https://docs.gitlab.com/ee/ssh/)
-
-[Github](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
-
 ### Personal Access Tokens
 
 [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
 
-[Bitbucket](https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html)
-
-[Gitlab](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
-
-[Github](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
-
 ---
-
-[Next Clone, Commit, Merge](02-clone-commit-push-merge.md)
-# Clone Commit Push Pull
 
 ## Forking
 
@@ -48,12 +33,6 @@ Here are links to the most common git systems and how to clone from them:
 
 [Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/forks?view=azure-devops&tabs=visual-studio)
 
-[Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/fork-a-repository/)
-
-[Gitlab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html)
-
-[Github](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
-
 ## Importing from other Repositories
 
 Sometimes you will want to fork from Github to your own repository so you can have a local copy to work from this is called importing. ***NOTE: If you are attending a lab provided by Red Hat please follow the Gitlab instructions to import from URL.***
@@ -62,38 +41,24 @@ Here are links on how to import for the most common repositories:
 
 [ADO](https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?view=azure-devops)
 
-[Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/import-a-repository-from-github-or-gitlab/)
-
-[Github](https://docs.github.com/en/github/importing-your-projects-to-github)
-
-[Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html)
-
 ## Cloning a repository
 
 Cloning is making a local copy of code in a local copy of the remote repository. Most of the time you will be cloning someone elses repository so you can use it or make a change and then push in for a request to have it merged into the upstream codebase. Remember unless you have access to the upstream repository you will need to either request access or fork the code to push into it.
 
 For this exercise fork this repository using the github instructions above then clone it (depending on if you created a PAT (public access token) or a SSH key follow the correct instruction below:
 
-`Note:` You can import into [Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html), [ADO](https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?view=azure-devops), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/import-a-repository-from-github-or-gitlab/) or git server of choice using their import feature if you do not have access to github (click link or tool for details).
-
 ### SSH Clone
 
 ```shell
-git clone git@github.com:yourgithubname/HowWeEnable.git
+git clone git@github.com:yourgithubname/GitWorkshop.git
 ```
 
 ### HTTP Clone
 
-Github Example:
+Example:
 
 ```shell
-git clone https://<pat>@gitserver/yourgithubusername/HowWeEnable.git
-```
-
-Gitlab Example:
-
-```shell
-git clone https://username:<pat>@gitserver/yourgithubusername/HowWeEnable.git
+git clone https://<pat>@gitserver/yourgithubusername/GitWorkshop.git
 ```
 
 `NOTE:` Replace `<pat>` with the token you created in the earlier exercise.
@@ -101,14 +66,14 @@ git clone https://username:<pat>@gitserver/yourgithubusername/HowWeEnable.git
 Output:
 
 ```shell
-Cloning into 'HowWeEnable'...
+Cloning into 'GitWorkshop'...
 remote: Enumerating objects: 283, done.
 remote: Counting objects: 100% (283/283), done.
 remote: Compressing objects: 100% (173/173), done.
 remote: Total 283 (delta 77), reused 276 (delta 74), pack-reused 0
 Receiving objects: 100% (283/283), 81.03 KiB | 1.72 MiB/s, done.
 Resolving deltas: 100% (77/77), done.
-cd HowWeEnable
+cd GitWorkshop
 tree
 .
 ├── LICENSE
@@ -141,7 +106,7 @@ Now any changes you make are in a separate branch from main called test.
 
 ## Commiting Code
 
-1. In the HowWeEnable directory create a new file and look at the status of it in git.
+1. In the GitWorkshop directory create a new file and look at the status of it in git.
 
     ```shell
     touch mynewfile.txt
@@ -203,7 +168,7 @@ Compressing objects: 100% (1/1), done.
 Writing objects: 100% (1/1), 1018 bytes | 339.00 KiB/s, done.
 Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
-To github.com:yourusername/HowWeEnable.git
+To github.com:yourusername/GitWorkshop.git
    c0db901..6eaaf6d  test -> test
 ```
 
