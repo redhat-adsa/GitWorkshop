@@ -1,4 +1,3 @@
-
 # Basic Git
 
 ## Authentication
