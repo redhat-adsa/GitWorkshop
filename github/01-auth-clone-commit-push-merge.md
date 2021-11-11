@@ -54,7 +54,7 @@ For this exercise fork this repository using the github instructions above then 
 ### SSH Clone
 
 ```shell
-git clone git@github.com:yourgithubname/HowWeEnable.git
+git clone git@github.com:yourgithubname/GitWorkshop.git
 ```
 
 ### HTTP Clone
@@ -62,7 +62,7 @@ git clone git@github.com:yourgithubname/HowWeEnable.git
 Github Example:
 
 ```shell
-git clone https://<pat>@gitserver/yourgithubusername/HowWeEnable.git
+git clone https://<pat>@gitserver/yourgithubusername/GitWorkshop.git
 ```
 
 `NOTE:` Replace `<pat>` with the token you created in the earlier exercise.
@@ -70,14 +70,14 @@ git clone https://<pat>@gitserver/yourgithubusername/HowWeEnable.git
 Output:
 
 ```shell
-Cloning into 'HowWeEnable'...
+Cloning into 'GitWorkshop'...
 remote: Enumerating objects: 283, done.
 remote: Counting objects: 100% (283/283), done.
 remote: Compressing objects: 100% (173/173), done.
 remote: Total 283 (delta 77), reused 276 (delta 74), pack-reused 0
 Receiving objects: 100% (283/283), 81.03 KiB | 1.72 MiB/s, done.
 Resolving deltas: 100% (77/77), done.
-cd HowWeEnable
+cd GitWorkshop
 tree
 .
 ├── LICENSE
@@ -110,7 +110,7 @@ Now any changes you make are in a separate branch from main called test.
 
 ## Commiting Code
 
-1. In the HowWeEnable directory create a new file and look at the status of it in git.
+1. In the GitWorkshop directory create a new file and look at the status of it in git.
 
     ```shell
     touch mynewfile.txt
@@ -172,7 +172,7 @@ Compressing objects: 100% (1/1), done.
 Writing objects: 100% (1/1), 1018 bytes | 339.00 KiB/s, done.
 Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
-To github.com:yourusername/HowWeEnable.git
+To github.com:yourusername/GitWorkshop.git
    c0db901..6eaaf6d  test -> test
 ```
 
