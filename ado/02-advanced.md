@@ -212,4 +212,4 @@ For in depth information on all strategies, Martin Fowler has a great blog on it
 
 ---
 
-[Merge Conflicts](04-merge-conflicts.md)
+[Merge Conflicts](03-merge-conflicts.md)

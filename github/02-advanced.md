@@ -212,4 +212,4 @@ For in depth information on all strategies, Martin Fowler has a great blog on it
 
 ---
 
-[Merge Conflicts](03-merge-conflicts.md)
+[Next Merge Conflicts](03-merge-conflicts.md) [Back auth-clone-commit-push-merge](01-auth-clone-commit-push-merge.md)

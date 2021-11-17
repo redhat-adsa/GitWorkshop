@@ -182,13 +182,7 @@ To github.com:yourusername/GitWorkshop.git
 
 If you are the owner and want to merge a feature branch into `main` you can do so via `git merge <branchname>` from the main branch, however this is not a best practice. Best practice is to perform a pull request (sometimes called merge request) from the central server and have someone review the changes before they are merged into main. Below are links to each major repository servers instructions to perform a pull request:
 
-[Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops)
-
 [Bitbucket](https://www.atlassian.com/git/tutorials/making-a-pull-request)
-
-[Github](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
-
-[Gitlab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
 
 Please create a pull request following above documentation to your repository you created above from the `test` branch into the `main` branch of your fork.
 
@@ -196,4 +190,4 @@ Please create a pull request following above documentation to your repository yo
 
 ---
 
-[Next Advanced Git](03-advanced.md)
+[Next Advanced Git](02-advanced.md) 

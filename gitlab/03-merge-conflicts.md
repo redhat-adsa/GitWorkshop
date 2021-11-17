@@ -101,3 +101,5 @@ _Note:_ `Main` could be called `master` if it is an older repository.
     ![mergeconflict](images/mergeconflict.png)
 
 Otherwise, you will need to go into the file and manually fix the conflict, then add a new commit. Or, you can always use `git rebase newbranch --interactive`
+
+[Back Advanced Git](02-advanced.md)
