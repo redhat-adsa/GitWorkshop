@@ -10,11 +10,14 @@ This is a workshop to help beginners through Advanced userst to understand how t
 
 [ODP slides of presentation](into_to_Git_slides.odp)
 
-## Links to Workshops (by git repository type)
+## Links to Workshops (by Repository type)
 
 [AzureDevOps](ado/01-auth-clone-commit-push-merge.md)
+
 [Bitbucket](bitbucket/01-auth-clone-commit-push-merge.md)
+
 [Github](github/01-auth-clone-commit-push-merge.md)
+
 [Gitlab](gitlab/01-auth-clone-commit-push-merge.md)
 
 ## Prerequisites
