@@ -190,4 +190,4 @@ Please create a pull request following above documentation to your repository yo
 
 ---
 
-[Next Advanced Git](02-advanced.md) 
+[Next Advanced Git](02-advanced.md)
