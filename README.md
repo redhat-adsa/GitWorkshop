@@ -1,6 +1,4 @@
-# Git Workshop
-
-## What is this?
+# What is this?
 
 This is a workshop to help beginners through Advanced users to understand how to use git with each of the major git hosting providers including Azure DevOps, Bitbucket, GitHub and Gitlab. In this lab you should learn how to pull, clone, fork, import, to merge requests and resolve conflicts.
 
@@ -65,6 +63,11 @@ git init --initial-branch=main
 ```
 
 *NOTE:* git init --initial-branch command was added in git 2.28. If you have an older version you will need to create the main branch and then set the global default to main in next step.
+
+```shell
+git checkout -b main
+git config init.defaultBranch main
+```
 
 ## Set main as global default
 
