@@ -2,7 +2,11 @@
 
 ## What is this?
 
-This is a workshop to help beginners through Advanced userst to understand how to use git with each of the major git hosting providers including Azure DevOps, Bitbucket, GitHub and Gitlab. In this lab you should learn how to pull, clone, fork, import, to merge requests and resolve conflicts.
+This is a workshop to help beginners through Advanced users to understand how to use git with each of the major git hosting providers including Azure DevOps, Bitbucket, GitHub and Gitlab. In this lab you should learn how to pull, clone, fork, import, to merge requests and resolve conflicts.
+
+## How to use this workshop
+
+The presentation is broken down to talk to each section of the training so you would can present the topics, and then have people do the section of the workshop. This breaks it up and makes it more interactive for questions and conversations on the concepts.
 
 ## Introduction to Git Presentation
 
@@ -10,11 +14,14 @@ This is a workshop to help beginners through Advanced userst to understand how t
 
 [ODP slides of presentation](into_to_Git_slides.odp)
 
-## Links to Workshops (by git repository type)
+## Links to Workshops (by Repository type)
 
 [AzureDevOps](ado/01-auth-clone-commit-push-merge.md)
+
 [Bitbucket](bitbucket/01-auth-clone-commit-push-merge.md)
+
 [Github](github/01-auth-clone-commit-push-merge.md)
+
 [Gitlab](gitlab/01-auth-clone-commit-push-merge.md)
 
 ## Prerequisites

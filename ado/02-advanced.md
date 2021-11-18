@@ -10,31 +10,31 @@ The process to review code is nearly the same with all git services, since we ar
 
    Example:
 
-   ![addimage](images/select_pr.png)
+   ![addimage](../images/select_pr.png)
 
 2. Click **Files Changed** in the center (1 in example below), and then **AFTER** you have reviewed all of the files, click **Review Changes** on the right (2 in example below).
 
    Example:
 
-   ![addimage](images/review_changes.png)
+   ![addimage](../images/review_changes.png)
 
 3. If there is something you would like to change, you can add a comment for changes to the individual who submitted the pull request by clicking the plus next to the code you want to change.
 
    Example:
 
-   ![hovercomment](images/hover-comment-icon.gif)
+   ![hovercomment](../images/hover-comment-icon.gif)
 
 4. Even better than just commenting, you can also suggest a change so they can easily review the proposed change as it will highlight the code with the desired change by clicking the insert suggestion button.
 
    Example:
 
-   ![sugestion block](images/suggestion-block.png)
+   ![sugestion block](../images/suggestion-block.png)
 
 ## Rebase
 
 Rebasing is the process of moving or combining a sequence of commits to a new base commit. Rebasing is most used to fix a bug in the main branch and makes sure you have a clean history of changes which can be visualized as the following:
 
-![image](images/rebase.svg)
+![image](../images/rebase.svg)
 
 _Note:_ You should not rebase in public repositories as it will look like some of the history disappear.
 
@@ -212,4 +212,4 @@ For in depth information on all strategies, Martin Fowler has a great blog on it
 
 ---
 
-[Merge Conflicts](04-merge-conflicts.md)
+[Merge Conflicts](03-merge-conflicts.md)
