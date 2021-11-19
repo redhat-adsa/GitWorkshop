@@ -6,22 +6,67 @@ Most repositories are disabling username and password as an auth mechanism for s
 
 ### SSH
 
-1. Generate an 4096 bit rsa key with a comment to make sure you know what it is for later.
+Generate an 4096 bit rsa key with a comment to make sure you know what it is for later.
 
-    ```shell
-    ssh-keygen -t rsa -b 4096 -C "sshkeyforgit"
-    cat ~/.ssh/id_rsa.pub
-    ```
+  ```shell
+  ssh-keygen -t rsa -b 4096 -C "sshkeyforgit"
+  cat ~/.ssh/id_rsa.pub
+  ```
 
-    `NOTE:` Never share your private key. It is the one without the `.pub` extension.
+  `NOTE:` Never share your private key. It is the one without the `.pub` extension.
 
-2. Add the key to the git server:
+### Add the public key to Azure DevOps
 
-[Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops)
+Associate the public key generated in the previous step with your user ID.
+
+1. Open your security settings by browsing to the web portal and selecting your avatar in the upper right of the
+   user interface. Select **Security** in the menu that appears.
+
+   ![Accessing User Profile in Azure DevOps Services](../images/ssh_profile_access.png)
+
+2. Select **+ New Key**.
+
+   ![Accessing Security Configuration in Azure DevOps Services](../images/ado_ssh_accessing_security_key.png)
+
+3. Copy the contents of the public key (for example, id_rsa.pub) that you generated into the **Public Key Data** field.
+
+   *IMPORTANT*
+   >Avoid adding whitespace or new lines into the **Key Data** field, as they can cause Azure DevOps Services to use an invalid public key. When pasting in the key, a newline often is added at the end. Be sure to remove this newline if it occurs.
+
+    ![Configuring Public Key in Azure DevOps Services](../images/ado_ssh_key_input.png)
+
+4. Give the key a useful description (this description will be displayed on the **SSH public keys** page for your profile) so that you can remember it later. Select **Save** to store the public key. Once saved, you cannot change the key. You can delete the key or create a new entry for another key. There are no restrictions on how many keys you can add to your user profile.
+
+5. Test the connection by running the following command: `ssh -T git@ssh.dev.azure.com`.
+If everything is working correctly, you'll receive a response which says: `remote: Shell access is not supported.`
+
+[SOURCE on Microsoft Docs](https://github.com/MicrosoftDocs/azure-devops-docs/blob/master/docs/repos/git/use-ssh-keys-to-authenticate.md)
 
 ### Personal Access Tokens
 
-[Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
+1. Sign in to your organization in Azure DevOps (```https://dev.azure.com/{yourorganization}```)
+  
+2. From your home page, open your user settings, and then select **Personal access tokens**.
+
+   ![Select Personal Access Tokens](../images/ado-select-personal-access-tokens.jpg)
+
+3. And then select **+ New Token**.
+
+   ![Select New Token to create](../images/ado-select-new-token.png)
+
+4. Name your token, select the organization where you want to use the token, and then choose a lifespan for your token.
+
+   ![Enter basic token information](../images/ado-create-new-pat.png)
+
+5. Select the scopes for this token to authorize for *your specific tasks*.
+
+   For example, to create a token to enable a build and release agent to authenticate to Azure DevOps Services, limit your token's scope to **Agent Pools (Read & manage)**. To read audit log events, and manage and delete streams, select **Read Audit Log**, and then select **Create**.
+
+   ![Select scopes for your PAT](../images/ado-select-pat-scopes-preview.png)
+
+6. When you're done, make sure to copy the token. For your security, it won't be shown again. Use this token as your password.
+
+[SOURCE on Microsoft Docs](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
 
 ---
 
