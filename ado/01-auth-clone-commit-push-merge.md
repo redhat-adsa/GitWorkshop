@@ -2,7 +2,7 @@
 
 ## Authentication
 
-Most repositories are disabling username and password as an auth mechanism for security reason so you will either need to set up a personal access token if using https authentication, or set up an ssh key and add it to your git server. Below are links to the most common git servers and how to do this:
+Most repositories are disabling username and password as an auth mechanism for security reason so you will either need to set up a personal access token if using https authentication, or set up an ssh key and add it to your git server. Your Team will need to decide what is a best practice going forward. for this exercise you only need to do the one you wish to use, so please choose your own adventure [SSH](#SSH) or [Personal Access Token](#Personal-Access-Token)
 
 ### SSH
 
