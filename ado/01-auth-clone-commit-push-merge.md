@@ -40,8 +40,6 @@ Associate the public key generated in the previous step with your user ID.
 5. Test the connection by running the following command: `ssh -T git@ssh.dev.azure.com`.
 If everything is working correctly, you'll receive a response which says: `remote: Shell access is not supported.`
 
-[SOURCE on Microsoft Docs](https://github.com/MicrosoftDocs/azure-devops-docs/blob/master/docs/repos/git/use-ssh-keys-to-authenticate.md)
-
 ### Personal Access Tokens
 
 1. Sign in to your organization in Azure DevOps (```https://dev.azure.com/{yourorganization}```)
@@ -66,8 +64,6 @@ If everything is working correctly, you'll receive a response which says: `remot
 
 6. When you're done, make sure to copy the token. For your security, it won't be shown again. Use this token as your password.
 
-[SOURCE on Microsoft Docs](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
-
 ---
 
 ## Forking
@@ -76,15 +72,17 @@ Most public repositories don't let everyone push to them so you will need to for
 
 Here are links to the most common git systems and how to clone from them:
 
-[Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/forks?view=azure-devops&tabs=visual-studio)
+1. Navigate to the repository to fork, and choose **Fork**.
 
-## Importing from other Repositories
+2. Specify a name, and choose the project where you want the fork to be created. If the repository contains a lot of topic branches, we recommend you fork only the default branch.
 
-Sometimes you will want to fork from Github to your own repository so you can have a local copy to work from this is called importing. ***NOTE: If you are attending a lab provided by Red Hat please follow the Gitlab instructions to import from URL.***
+3. Choose **Fork** to create the fork.
 
-Here are links on how to import for the most common repositories:
+![Create new fork](../images/ado-create-new-fork.png)
 
-[ADO](https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?view=azure-devops)
+> [!NOTE]
+> You must have the [Create Repository](https://docs.microsoft.com/en-us/azure/devops/organizations/security/permissions?view=azure-devops#git-repository-object-level) permission in your chosen project to create a fork.
+> We recommend you create a dedicated project for forks where all contributors have the Create Repository permission. For an example of granting this permission, see [Set Git repository permissions](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-git-repository-permissions?view=azure-devops#set-git-repository-permissions).
 
 ## Cloning a repository
 
@@ -95,7 +93,7 @@ For this exercise fork this repository using the github instructions above then 
 ### SSH Clone
 
 ```shell
-git clone git@github.com:yourgithubname/GitWorkshop.git
+git clone git@azuredevops.com:username/GitWorkshop.git
 ```
 
 ### HTTP Clone
@@ -103,7 +101,7 @@ git clone git@github.com:yourgithubname/GitWorkshop.git
 Example:
 
 ```shell
-git clone https://<pat>@gitserver/yourgithubusername/GitWorkshop.git
+git clone https://<pat>@azuredevops.com/username/GitWorkshop.git
 ```
 
 `NOTE:` Replace `<pat>` with the token you created in the earlier exercise.
@@ -219,20 +217,66 @@ To github.com:yourusername/GitWorkshop.git
 
 ## Merging Code
 
-If you are the owner and want to merge a feature branch into `main` you can do so via `git merge <branchname>` from the main branch, however this is not a best practice. Best practice is to perform a pull request (sometimes called merge request) from the central server and have someone review the changes before they are merged into main. Below are links to each major repository servers instructions to perform a pull request:
+If you are the owner and want to merge a feature branch into `main` you can do so via `git merge <branchname>` from the main branch, however this is not a best practice. Best practice is to perform a pull request from the central server and have someone review the changes before they are merged into main.
 
-[Azure Devops](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops)
+From the Azure DevOps project website, you can create a new PR from:
 
-[Bitbucket](https://www.atlassian.com/git/tutorials/making-a-pull-request)
+- [The Pull requests page](#from-the-pull-requests-page).
+- [A feature branch pushed to your repo](#from-a-pushed-branch).
+- [An existing PR, by using cherry-pick](#add-updates-with-cherry-pick).
+- [The Development control in a linked Azure Boards work item](#from-a-linked-work-item).
 
-[Github](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+### Create a PR from the Pull requests page
 
-[Gitlab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+You can create PRs for any branch from your project's **Pull requests** page on the web.
+
+1. On the **Repos** > **Pull requests** page, select **New pull request** at upper right.
+
+   ![Screenshot of the New pull request button.](../images/ado-new-pr-button.png)
+
+2. Select the branch with the changes and the branch you want to merge the changes into, such as the main branch.
+
+   ![Screenshot of source and target branches for a P R in Azure Repos.](../images/ado-pr-branch-targets.png)
+
+3. Enter your PR details and create the PR.
+
+### Create a PR from a pushed branch
+
+After you push or update a feature branch, Azure Repos displays a prompt to create a PR.
+
+- On the **Pull requests** page:
+
+  ![Screenshot that shows the prompt to create a P R on the Pull Requests tab in Azure Repos.](../images/ado-create-pr-from-push-new-nav.png)
+
+- On the **Files** page:
+
+  ![Screenshot that shows the prompt to create a P R on the Files tab in Azure Repos.](../images/ado-create-pr-from-push-files-tab-new-nav.png)
+
+Select **Create a pull request** to go to a page where you can enter your PR details and create the PR.
+
+After you push or update a feature branch, Azure Repos prompts you to create a PR in the **Code** view on the web. This prompt is displayed on **Pull Requests** and **Files**.
+
+![Screenshot that shows the prompt to create a P R on the Pull Requests tab in Azure Repos.](../images/ado-create-pr-from-push.png)
+
+![Screenshot that shows the prompt to create a P R on the Files tab in Azure Repos.](../images/ado-create-pr-from-push-files-tab.png)
+
+Select **Create a pull request** to go to a page where you can enter your PR details and create the PR.
+
+### Create a PR from a linked work item
+
+You can create a PR directly from an Azure Boards work item linked to the branch.
+
+1. In Azure Boards, from **Backlogs** or **Queries** in the **Work** view, open a work item that's linked to the branch.
+1. In the **Development** area of the work item, select **Create a pull request**.
+
+   ![Screenshot of creating a PR from the Development area of a work item with a linked branch.](../images/ado-create-pr-from-work-item.png)
+
+The link takes you to a page where you can enter your PR details and create the PR.
 
 Please create a pull request following above documentation to your repository you created above from the `test` branch into the `main` branch of your fork.
-
-`Note:` in the next section we will walk through how to do this vi Github.
 
 ---
 
 [Next Advanced Git](02-advanced.md)
+
+> Note: all information here was sourced from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/devops/repos/git/)
