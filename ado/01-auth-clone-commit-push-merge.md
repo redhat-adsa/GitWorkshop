@@ -2,9 +2,9 @@
 
 ## Authentication
 
-Most repositories are disabling username and password as an auth mechanism for security reason so you will either need to set up a personal access token if using https authentication, or set up an ssh key and add it to your git server. Your Team will need to decide what is a best practice going forward. for this exercise you only need to do the one you wish to use, so please choose your own adventure [SSH](#SSH) or [Personal Access Token](#Personal-Access-Token)
+Most repositories are disabling username and password as an auth mechanism for security reason so you will either need to set up a personal access token if using https authentication, or set up an ssh key and add it to your git server. Your Team will need to decide what is a best practice going forward. for this exercise you only need to do the one you wish to use, so please choose your own adventure [SSH](#ssh) or [Personal Access Token](#personal-access-token)
 
-### SSH
+## SSH
 
 Generate an 4096 bit rsa key with a comment to make sure you know what it is for later.
 
@@ -15,7 +15,7 @@ Generate an 4096 bit rsa key with a comment to make sure you know what it is for
 
   `NOTE:` Never share your private key. It is the one without the `.pub` extension.
 
-### Add the public key to Azure DevOps
+## Add the public key to Azure DevOps
 
 Associate the public key generated in the previous step with your user ID.
 
@@ -40,7 +40,7 @@ Associate the public key generated in the previous step with your user ID.
 5. Test the connection by running the following command: `ssh -T git@ssh.dev.azure.com`.
 If everything is working correctly, you'll receive a response which says: `remote: Shell access is not supported.`
 
-### Personal Access Tokens
+## Personal Access Token
 
 1. Sign in to your organization in Azure DevOps (```https://dev.azure.com/{yourorganization}```)
   
@@ -90,13 +90,13 @@ Cloning is making a local copy of code in a local copy of the remote repository.
 
 For this exercise fork this repository using the github instructions above then clone it (depending on if you created a PAT (public access token) or a SSH key follow the correct instruction below:
 
-### SSH Clone
+## SSH Clone
 
 ```shell
 git clone git@azuredevops.com:username/GitWorkshop.git
 ```
 
-### HTTP Clone
+## HTTP Clone
 
 Example:
 
