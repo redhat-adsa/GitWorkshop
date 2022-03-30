@@ -98,7 +98,7 @@ _Note:_ `Main` could be called `master` if it is an older repository.
 
 10. So how do I fix this? If you are using an IDE like VSCode, you can select accept an incoming change as shown below
 
-    ![mergeconflict](images/mergeconflict.png)
+    ![mergeconflict](../images/mergeconflict.png)
 
 Otherwise, you will need to go into the file and manually fix the conflict, then add a new commit. Or, you can always use `git rebase newbranch --interactive`
 

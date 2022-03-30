@@ -29,23 +29,19 @@ Most repositories are disabling username and password as an auth mechanism for s
 
 Most public repositories don't let everyone push to them so you will need to fork the repository to your own namespace in your git server before you can clone it.
 
-Here are links to the most common git systems and how to clone from them:
-
-[Gitlab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html)
+Click [here](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html) to follow forking instructions in Gitlab.
 
 ## Importing from other Repositories
 
 Sometimes you will want to fork from Github to your own repository so you can have a local copy to work from this is called importing. ***NOTE: If you are attending a lab provided by Red Hat please follow the Gitlab instructions to import from URL.***
 
-Here are links on how to import for the most common repositories:
-
-[Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html)
+Click [here](https://docs.gitlab.com/ee/user/project/import/github.html) to import a repository to Gitlab.
 
 ## Cloning a repository
 
 Cloning is making a local copy of code in a local copy of the remote repository. Most of the time you will be cloning someone elses repository so you can use it or make a change and then push in for a request to have it merged into the upstream codebase. Remember unless you have access to the upstream repository you will need to either request access or fork the code to push into it.
 
-For this exercise fork this repository using the github instructions above then clone it (depending on if you created a PAT (public access token) or a SSH key follow the correct instruction below:
+**For this exercise** fork this repository using the [Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html) instructions then clone it. Depending on if you created a PAT (public access token) or a SSH key follow the correct instruction below:
 
 `Note:` You can import into [Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html), [ADO](https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?view=azure-devops), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/import-a-repository-from-github-or-gitlab/) or git server of choice using their import feature if you do not have access to github (click link or tool for details).
 
@@ -104,6 +100,19 @@ Output:
 Switched to a new branch 'test'
 ```
 
+You should see that you are now in the test branch by executing the command `git status`
+
+```shell
+git status
+```
+
+Output:
+
+```shell
+On branch test
+nothing to commit, working tree clean
+```
+
 Now any changes you make are in a separate branch from main called test.
 
 ## Commiting Code
@@ -160,6 +169,8 @@ Just like it sounds, `git push` pushes the commits to the central repository. A 
 git push origin test
 ```
 
+`Note:` 'Origin' in the command above denotes the location being pushed to.  Each repository will have an origin and a remote location (as stated before).
+
 Output:
 
 ```shell
@@ -176,7 +187,7 @@ To github.com:yourusername/GitWorkshop.git
 
 ## Merging Code
 
-If you are the owner and want to merge a feature branch into `main` you can do so via `git merge <branchname>` from the main branch, however this is not a best practice. Best practice is to perform a pull request (sometimes called merge request) from the central server and have someone review the changes before they are merged into main. Below are links to each major repository servers instructions to perform a pull request:
+If you are the owner and want to merge a feature branch into `main` you can do so via `git merge <branchname>` from the main branch, however this is not a best practice. Best practice is to perform a pull request (sometimes called merge request) from the central server and have someone review the changes before they are merged into main. Below are instructions to perform a pull request from Gitlab:
 
 [Gitlab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
 
