@@ -70,7 +70,7 @@ If everything is working correctly, you'll receive a response which says: `remot
 
 Most public repositories don't let everyone push to them so you will need to fork the repository to your own namespace in your git server before you can clone it.
 
-Here are links to the most common git systems and how to clone from them:
+Here is how to fork in ADO:
 
 1. Navigate to the repository to fork, and choose **Fork**.
 
@@ -88,7 +88,7 @@ Here are links to the most common git systems and how to clone from them:
 
 Cloning is making a local copy of code in a local copy of the remote repository. Most of the time you will be cloning someone elses repository so you can use it or make a change and then push in for a request to have it merged into the upstream codebase. Remember unless you have access to the upstream repository you will need to either request access or fork the code to push into it.
 
-For this exercise fork this repository using the github instructions above then clone it (depending on if you created a PAT (public access token) or a SSH key follow the correct instruction below:
+**For this exercise** fork this repository using the instructions above then clone it (depending on if you created a PAT (public access token) or a SSH key follow the correct instruction below:
 
 ## SSH Clone
 
@@ -143,6 +143,19 @@ Output:
 
 ```shell
 Switched to a new branch 'test'
+```
+
+You should see that you are now in the test branch by executing the command `git status`
+
+```shell
+git status
+```
+
+Output:
+
+```shell
+On branch test
+nothing to commit, working tree clean
 ```
 
 Now any changes you make are in a separate branch from main called test.
@@ -200,6 +213,8 @@ Just like it sounds, `git push` pushes the commits to the central repository. A 
 ```shell
 git push origin test
 ```
+
+`Note:` 'Origin' in the command above denotes the location being pushed to.  Each repository will have an origin and a remote location (as stated before).
 
 Output:
 
